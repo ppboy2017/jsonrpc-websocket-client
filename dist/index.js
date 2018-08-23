@@ -3,15 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.OPEN = exports.CONNECTING = exports.CLOSED = exports.AbortedConnection = exports.ConnectionError = exports.createBackoff = undefined;
+exports.OPEN = exports.CONNECTING = exports.CLOSED = exports.AbortedConnection = exports.ConnectionError = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _jsonRpcPeer = require('json-rpc-peer');
 
 var _jsonRpcPeer2 = _interopRequireDefault(_jsonRpcPeer);
-
-var _iterableBackoff = require('iterable-backoff');
 
 var _parseUrl = require('./parse-url');
 
@@ -30,13 +28,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// import { fibonacci } from 'iterable-backoff'
 
 // ===================================================================
 
-var createBackoff = exports.createBackoff = function createBackoff() {
-  var tries = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
-  return (0, _iterableBackoff.fibonacci)().addNoise().toMs().take(tries);
-};
+// export const createBackoff = (tries = 10) =>
+//   fibonacci().addNoise().toMs().take(tries)
 
 exports.ConnectionError = _websocketClient.ConnectionError;
 exports.AbortedConnection = _websocketClient.AbortedConnection;
