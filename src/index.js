@@ -42,7 +42,7 @@ export default class JsonRpcWebSocketClient extends WebSocketClient {
       super(parseUrl(url), protocols, opts)
     }
 
-    const peer = this._peer = new Peer(message => {
+    const peer = this._peer = new Peer(message => { 
       // This peer is only a client and does not support requests.
       if (message.type !== 'notification') {
         throw new MethodNotFound()
