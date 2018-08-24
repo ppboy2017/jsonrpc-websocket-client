@@ -36,7 +36,7 @@
     "json-rpc-peer": "^0.15.0",
     "lodash": "^4.17.4",
     "make-error": "^1.3.0",
-    "promise-toolbox": "^0.9.5",
+    "promise-toolbox": "git+https://github.com/HaoLLL/promise-toolbox.git",
     "ws": "^6.0.0"
   },
   "devDependencies": {
